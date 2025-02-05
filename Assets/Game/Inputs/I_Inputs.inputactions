@@ -1,5 +1,5 @@
 {
-    "name": "Inputs",
+    "name": "I_Inputs",
     "maps": [
         {
             "name": "Inputs",
@@ -110,6 +110,34 @@
                     "action": "Movement Player2",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "New action map",
+            "id": "78e85815-adde-4f03-85b8-18b50bc56a0d",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "91ca2dc7-db3e-4267-9165-d5c79cb0097a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f6cd52bc-391d-4239-a0db-8a69f6315829",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
