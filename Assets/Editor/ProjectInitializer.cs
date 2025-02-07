@@ -7,13 +7,10 @@ public static class ProjectInitializer
 {
     static ProjectInitializer()
     {
-        // Vérifie si la structure de base existe déjà
-        if (Directory.Exists(Application.dataPath + "/Game")) return;
-
         string rootFolder = $"Game";
 
-        // Liste des dossiers à créer
-        string[] folders = new string[]
+		// List of subfolders to create
+		string[] folders = new string[]
         {
             rootFolder,
 
@@ -50,18 +47,25 @@ public static class ProjectInitializer
             $"ScriptTemplates",
         };
 
-        // Création des dossiers s'ils n'existent pas déjà
-        foreach (string folder in folders)
+		// Check if the root folder already exists; if not, create all the subfolders
+		string rootPath = Path.Combine(Application.dataPath, rootFolder);
+
+        if (!Directory.Exists(rootPath))
         {
-            string folderPath = Path.Combine(Application.dataPath, folder);
+			Directory.CreateDirectory(rootPath);
 
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-        }
+			foreach (var folder in folders)
+			{
+				string folderPath = Path.Combine(Application.dataPath, folder);
 
-        // Forcer Unity à rafraîchir l'AssetDatabase
-        AssetDatabase.Refresh();
+				if (!Directory.Exists(folderPath))
+				{
+					Directory.CreateDirectory(folderPath);
+				}
+			}
+
+			// Refresh Unity AssetDatabase 
+			AssetDatabase.Refresh();
+		}
     }
 }

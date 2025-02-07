@@ -46,6 +46,24 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Jump Player1"",
+                    ""type"": ""Button"",
+                    ""id"": ""730cc6f4-ea56-495d-bbc0-c099bba1e927"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump Player2"",
+                    ""type"": ""Button"",
+                    ""id"": ""3d7ba48f-0a36-4297-b535-1f5980852880"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""5a46cdb0-93b3-48ec-9751-bc8dca7c5517"",
@@ -132,32 +150,26 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""Movement Player2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                }
-            ]
-        },
-        {
-            ""name"": ""New action map"",
-            ""id"": ""78e85815-adde-4f03-85b8-18b50bc56a0d"",
-            ""actions"": [
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""91ca2dc7-db3e-4267-9165-d5c79cb0097a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
+                },
                 {
                     ""name"": """",
-                    ""id"": ""f6cd52bc-391d-4239-a0db-8a69f6315829"",
-                    ""path"": """",
+                    ""id"": ""3b9894a0-b09f-4c07-abbb-23a29ee0347a"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Jump Player1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dda71cbd-b9bb-4afc-9980-207f41d085d4"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump Player2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -170,10 +182,9 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
         m_Inputs = asset.FindActionMap("Inputs", throwIfNotFound: true);
         m_Inputs_MovementPlayer1 = m_Inputs.FindAction("Movement Player1", throwIfNotFound: true);
         m_Inputs_MovementPlayer2 = m_Inputs.FindAction("Movement Player2", throwIfNotFound: true);
+        m_Inputs_JumpPlayer1 = m_Inputs.FindAction("Jump Player1", throwIfNotFound: true);
+        m_Inputs_JumpPlayer2 = m_Inputs.FindAction("Jump Player2", throwIfNotFound: true);
         m_Inputs_Pause = m_Inputs.FindAction("Pause", throwIfNotFound: true);
-        // New action map
-        m_Newactionmap = asset.FindActionMap("New action map", throwIfNotFound: true);
-        m_Newactionmap_Newaction = m_Newactionmap.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -237,6 +248,8 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
     private List<IInputsActions> m_InputsActionsCallbackInterfaces = new List<IInputsActions>();
     private readonly InputAction m_Inputs_MovementPlayer1;
     private readonly InputAction m_Inputs_MovementPlayer2;
+    private readonly InputAction m_Inputs_JumpPlayer1;
+    private readonly InputAction m_Inputs_JumpPlayer2;
     private readonly InputAction m_Inputs_Pause;
     public struct InputsActions
     {
@@ -244,6 +257,8 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
         public InputsActions(@I_Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @MovementPlayer1 => m_Wrapper.m_Inputs_MovementPlayer1;
         public InputAction @MovementPlayer2 => m_Wrapper.m_Inputs_MovementPlayer2;
+        public InputAction @JumpPlayer1 => m_Wrapper.m_Inputs_JumpPlayer1;
+        public InputAction @JumpPlayer2 => m_Wrapper.m_Inputs_JumpPlayer2;
         public InputAction @Pause => m_Wrapper.m_Inputs_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Inputs; }
         public void Enable() { Get().Enable(); }
@@ -260,6 +275,12 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
             @MovementPlayer2.started += instance.OnMovementPlayer2;
             @MovementPlayer2.performed += instance.OnMovementPlayer2;
             @MovementPlayer2.canceled += instance.OnMovementPlayer2;
+            @JumpPlayer1.started += instance.OnJumpPlayer1;
+            @JumpPlayer1.performed += instance.OnJumpPlayer1;
+            @JumpPlayer1.canceled += instance.OnJumpPlayer1;
+            @JumpPlayer2.started += instance.OnJumpPlayer2;
+            @JumpPlayer2.performed += instance.OnJumpPlayer2;
+            @JumpPlayer2.canceled += instance.OnJumpPlayer2;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
@@ -273,6 +294,12 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
             @MovementPlayer2.started -= instance.OnMovementPlayer2;
             @MovementPlayer2.performed -= instance.OnMovementPlayer2;
             @MovementPlayer2.canceled -= instance.OnMovementPlayer2;
+            @JumpPlayer1.started -= instance.OnJumpPlayer1;
+            @JumpPlayer1.performed -= instance.OnJumpPlayer1;
+            @JumpPlayer1.canceled -= instance.OnJumpPlayer1;
+            @JumpPlayer2.started -= instance.OnJumpPlayer2;
+            @JumpPlayer2.performed -= instance.OnJumpPlayer2;
+            @JumpPlayer2.canceled -= instance.OnJumpPlayer2;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
@@ -293,60 +320,12 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
         }
     }
     public InputsActions @Inputs => new InputsActions(this);
-
-    // New action map
-    private readonly InputActionMap m_Newactionmap;
-    private List<INewactionmapActions> m_NewactionmapActionsCallbackInterfaces = new List<INewactionmapActions>();
-    private readonly InputAction m_Newactionmap_Newaction;
-    public struct NewactionmapActions
-    {
-        private @I_Inputs m_Wrapper;
-        public NewactionmapActions(@I_Inputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Newactionmap_Newaction;
-        public InputActionMap Get() { return m_Wrapper.m_Newactionmap; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(NewactionmapActions set) { return set.Get(); }
-        public void AddCallbacks(INewactionmapActions instance)
-        {
-            if (instance == null || m_Wrapper.m_NewactionmapActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_NewactionmapActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
-        }
-
-        private void UnregisterCallbacks(INewactionmapActions instance)
-        {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
-        }
-
-        public void RemoveCallbacks(INewactionmapActions instance)
-        {
-            if (m_Wrapper.m_NewactionmapActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(INewactionmapActions instance)
-        {
-            foreach (var item in m_Wrapper.m_NewactionmapActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_NewactionmapActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public NewactionmapActions @Newactionmap => new NewactionmapActions(this);
     public interface IInputsActions
     {
         void OnMovementPlayer1(InputAction.CallbackContext context);
         void OnMovementPlayer2(InputAction.CallbackContext context);
+        void OnJumpPlayer1(InputAction.CallbackContext context);
+        void OnJumpPlayer2(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
-    }
-    public interface INewactionmapActions
-    {
-        void OnNewaction(InputAction.CallbackContext context);
     }
 }

@@ -1100,6 +1100,7 @@ GameObject:
   - component: {fileID: 363582651}
   - component: {fileID: 363582653}
   - component: {fileID: 363582652}
+  - component: {fileID: 363582654}
   m_Layer: 0
   m_Name: UIManagerGame
   m_TagString: Untagged
@@ -1151,6 +1152,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b4eb12f58eb3148b1b96b9efc24690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneName: 0
+--- !u!114 &363582654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363582650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d5a454e570279c44c86456637916ecab, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3b55042c-88e4-475c-b480-29f6a16bc6e5
+    m_ActionName: Inputs/Movement Player1[/Keyboard/q,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 438918c8-834b-4d65-a318-cb1a4c23ea08
+    m_ActionName: Inputs/Movement Player2[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5a46cdb0-93b3-48ec-9751-bc8dca7c5517
+    m_ActionName: Inputs/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 730cc6f4-ea56-495d-bbc0-c099bba1e927
+    m_ActionName: Inputs/Jump Player1[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3d7ba48f-0a36-4297-b535-1f5980852880
+    m_ActionName: Inputs/Jump Player2[/Keyboard/upArrow]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Inputs
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &411375209
 GameObject:
   m_ObjectHideFlags: 0
