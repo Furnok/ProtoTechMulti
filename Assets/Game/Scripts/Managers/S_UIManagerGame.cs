@@ -12,16 +12,15 @@ public class S_UIManagerGame : MonoBehaviour
 
     [Title("RSE")]
     [SerializeField] private RSE_PauseMenu rsePauseMenu;
+    [SerializeField] private RSE_UnPauseMenu rseUnPauseMenu;
     [SerializeField] private RSE_Win rseWin;
-
-    [Title("TEMP")]
-    [SerializeField] private ScenesName sceneName;
 
     private bool isPaused;
 
     private void OnEnable()
     {
         rsePauseMenu.action += CallPause;
+        rseUnPauseMenu.action += UnPauseGame;
         rseWin.action += Win;
 
         Cursor.visible = false;
@@ -30,6 +29,7 @@ public class S_UIManagerGame : MonoBehaviour
     private void OnDisable()
     {
         rsePauseMenu.action -= CallPause;
+        rseUnPauseMenu.action -= UnPauseGame;
         rseWin.action -= Win;
     }
 

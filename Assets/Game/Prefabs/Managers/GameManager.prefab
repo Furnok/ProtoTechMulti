@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2319562713074001770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5605073724994559472}
+  - component: {fileID: 4276032124738378680}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5605073724994559472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319562713074001770}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4276032124738378680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319562713074001770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb451a9413da0143a1505d3706f0b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rseGoalP1: {fileID: 11400000, guid: a335e6682ecb7734b99253816ebb05ec, type: 2}
+  rseGoalP2: {fileID: 11400000, guid: dd6f313d950f62944a4c8039dbe970bf, type: 2}
+  rseResetBall: {fileID: 11400000, guid: 64f1ccbddd176524b915b6bfce5787d6, type: 2}
+  rseUpdateUI: {fileID: 11400000, guid: 9024fa1a93473154c9379fe4d688bfb3, type: 2}
+  rseStartTime: {fileID: 11400000, guid: c8092b062f6337a4c94cc4cde846a21d, type: 2}
+  rseWin: {fileID: 11400000, guid: 47fc6fee07d7a034bbcf681560235a38, type: 2}
+  rsoCurrentScoreP1: {fileID: 11400000, guid: b8edfb0e5d763fc44bbf8c3801adc38e, type: 2}
+  rsoCurrentScoreP2: {fileID: 11400000, guid: 1fac52e0bed3d59479ee35d4d1225bb5, type: 2}
+  ssoScoreGain: {fileID: 11400000, guid: 583bc5c5ce48b4a4b9fcf71e3058e7ed, type: 2}
+  ssoScoreP1: {fileID: 11400000, guid: ffe33bdc9fda79646930a9f44b4a1728, type: 2}
+  ssoScoreP2: {fileID: 11400000, guid: c55fabba29f342940a29487bfede681a, type: 2}
+  ssoScoreWin: {fileID: 11400000, guid: 5fc821ef6eb07ff4d9249e0be21751a3, type: 2}
+  ssoBallPosP1: {fileID: 11400000, guid: 4221b2c9d6080bc4790e1834fd2b7391, type: 2}
+  ssoBallPosP2: {fileID: 11400000, guid: 5c0922d32e89ccb429954400de4ab5a6, type: 2}
