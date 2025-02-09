@@ -32,13 +32,16 @@ public class S_UIManagerGame : MonoBehaviour
 
     private void CallPause()
     {
-        if (isPaused)
+        if(!panelEnd.activeInHierarchy)
         {
-            UnPauseGame();
-        }
-        else
-        {
-            PauseGame();
+            if (isPaused)
+            {
+                UnPauseGame();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
     }
 
@@ -65,6 +68,8 @@ public class S_UIManagerGame : MonoBehaviour
 
     private void Win()
     {
-        panelPause.SetActive(true);
+        panelEnd.SetActive(true);
+
+        Time.timeScale = 0.0f;
     }
 }
