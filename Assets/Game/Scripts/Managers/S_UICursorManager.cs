@@ -1,11 +1,12 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class S_UICursorManager : MonoBehaviour
 {
-    [Header("References")]
+    [Title("References")]
     [SerializeField] private Texture2D handCursor;
 
-    [Header("RSE")]
+    [Title("RSE")]
     [SerializeField] private RSE_CursorDefault rseCursorDefault;
     [SerializeField] private RSE_CursorHand rseCursorHand;
 

@@ -11,8 +11,8 @@ public class S_UIManagerGame : MonoBehaviour
 
 	[SerializeField] private SceneName SceneName;
 
-	private void Start()
-	{
-		SceneManager.LoadScene(SceneName.ToString());
-	}
+    private void Start()
+    {
+
+    }
 }
