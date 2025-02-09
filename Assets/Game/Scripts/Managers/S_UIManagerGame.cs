@@ -10,7 +10,7 @@ public class S_UIManagerGame : MonoBehaviour
     [SerializeField] private RSE_PauseMenu rsePauseMenu;
 
     [Title("TEMP")]
-    [SerializeField] private SceneName SceneName;
+    [SerializeField] private ScenesName sceneName;
 
     private bool isPaused;
 

@@ -5,21 +5,21 @@ using UnityEngine.SceneManagement;
 
 public static class SceneEnumGenerator
 {
-	private const string EnumFilePath = "Assets/Game/Scripts/Container/SceneEnum.cs";
+	private const string EnumFilePath = "Assets/Game/Scripts/Container/ScenesEnum.cs";
 
-	[MenuItem("Tools/Generate Scene Enum")]
-	public static void GenerateSceneEnum()
+	[MenuItem("Tools/Generate Scenes Enum")]
+	public static void GenerateScenesEnum()
 	{
 		// Get all scene paths in the build settings
 		int sceneCount = SceneManager.sceneCountInBuildSettings;
-		string[] scenePaths = new string[sceneCount];
+		string[] scenes = new string[sceneCount];
 		for (int i = 0; i < sceneCount; i++)
 		{
-			scenePaths[i] = Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
+			scenes[i] = Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
 		}
 
 		// Start creating the enum code
-		string enumCode = "public enum SceneName\n{\n    " + string.Join(",\n    ", scenePaths.Select(sceneName => sceneName.Replace(" ", "_").Replace("-", "_"))) + "\n}";
+		string enumCode = "public enum ScenesName\n{\n    " + string.Join(",\n    ", scenes.Select(sceneName => sceneName.Replace(" ", "_").Replace("-", "_"))) + "\n}";
 
 		// Ensure directory exists and write the enum code to a C# file
 		Directory.CreateDirectory(Path.GetDirectoryName(EnumFilePath));

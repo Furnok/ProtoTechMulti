@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7baffbd6e91d5848b6bc8effe30855a, type: 3}
-  m_Name: RSO_CurrentScoreP2
+  m_Script: {fileID: 11500000, guid: 84d86b462406cdf4da4c0bc32dc86074, type: 3}
+  m_Name: RSE_StartTime
   m_EditorClassIdentifier: 
-  _value: 2
