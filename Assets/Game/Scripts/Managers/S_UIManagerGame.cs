@@ -1,18 +1,61 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class S_UIManagerGame : MonoBehaviour
 {
-	//[Header("Parameters")]
+    [Title("References")]
+    [SerializeField] private GameObject panelPause;
 
-	//[Header("References")]
+    [Title("RSE")]
+    [SerializeField] private RSE_PauseMenu rsePauseMenu;
 
-	//[Header("RSE")]
+    [Title("TEMP")]
+    [SerializeField] private SceneName SceneName;
 
-	[SerializeField] private SceneName SceneName;
+    private bool isPaused;
 
-    private void Start()
+    private void OnEnable()
     {
+        rsePauseMenu.action += CallPause;
 
+        Cursor.visible = false;
+    }
+
+    private void OnDisable()
+    {
+        rsePauseMenu.action -= CallPause;
+    }
+
+    private void CallPause()
+    {
+        if (isPaused)
+        {
+            UnPauseGame();
+        }
+        else
+        {
+            PauseGame();
+        }
+    }
+
+    private void PauseGame()
+    {
+        isPaused = true;
+        Cursor.visible = true;
+
+        panelPause.SetActive(true);
+
+        Time.timeScale = 0.0f;
+    }
+
+    private void UnPauseGame()
+    {
+        isPaused = false;
+        Cursor.visible = false;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+
+        panelPause.SetActive(false);
+
+        Time.timeScale = 1.0f;
     }
 }

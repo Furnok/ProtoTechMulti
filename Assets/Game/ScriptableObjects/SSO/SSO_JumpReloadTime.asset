@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f18ca81b72561c44983a166d61f6628, type: 3}
-  m_Name: SSO_JumpForce
+  m_Script: {fileID: 11500000, guid: 72b4ffe6c5a517d4a9a1d9062e254f29, type: 3}
+  m_Name: SSO_JumpReloadTime
   m_EditorClassIdentifier: 
-  _value: 3000
+  _value: 0.6

@@ -17,8 +17,10 @@ public class S_Player : MonoBehaviour
     [Title("SSO")]
     [SerializeField] private SSO_PlayerSpeed ssoPlayerSpeed;
     [SerializeField] private SSO_JumpForce ssoJumpForce;
+    [SerializeField] private SSO_JumpReloadTime ssoJumpReloadTime;
 
-    private bool isMoving;
+    private bool isMoving = false;
+    private bool canJump = true;
 
     private void OnEnable()
     {
@@ -31,7 +33,6 @@ public class S_Player : MonoBehaviour
     {
         rsePlayerMove.action -= PlayerMove;
         rsePlayerJump.action -= PlayerJump;
-
     }
 
     private void CheckWall(float moveDirection)
@@ -82,11 +83,22 @@ public class S_Player : MonoBehaviour
         }
     }
 
+    private IEnumerator JumpReload()
+    {
+        canJump = false;
+
+        yield return new WaitForSeconds(ssoJumpReloadTime.Value);
+
+        canJump = true;
+    }
+
     private void PlayerJump(InputAction.CallbackContext ctx)
     {
-        if (ctx.started)
+        if (ctx.started && canJump)
         {
             rb.AddForce(rb.velocity + Vector2.up * ssoJumpForce.Value, ForceMode2D.Impulse);
+
+            StartCoroutine(JumpReload());
         }
     }
 }
