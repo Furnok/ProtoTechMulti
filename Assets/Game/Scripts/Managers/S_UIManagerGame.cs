@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 
 public class S_UIManagerGame : MonoBehaviour
@@ -6,6 +7,8 @@ public class S_UIManagerGame : MonoBehaviour
     [Title("References")]
     [SerializeField] private GameObject panelPause;
     [SerializeField] private GameObject panelEnd;
+    [SerializeField] private TextMeshProUGUI textWin;
+    [SerializeField] private TextMeshProUGUI textLose;
 
     [Title("RSE")]
     [SerializeField] private RSE_PauseMenu rsePauseMenu;
@@ -66,8 +69,19 @@ public class S_UIManagerGame : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    private void Win()
+    private void Win(bool val)
     {
+        if (val)
+        {
+            textWin.text = "Player 1: Win";
+            textLose.text = "Player 2: Lose";
+        }
+        else
+        {
+            textWin.text = "Player 2: Win";
+            textLose.text = "Player 1: Lose";
+        }
+
         panelEnd.SetActive(true);
 
         Time.timeScale = 0.0f;

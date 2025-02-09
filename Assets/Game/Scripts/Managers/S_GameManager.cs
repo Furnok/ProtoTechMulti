@@ -68,11 +68,11 @@ public class S_GameManager : MonoBehaviour
 
         if (rsoCurrentScoreP1.Value >= ssoScoreWin.Value)
         {
-            rseWin?.RaiseEvent();
+            rseWin?.RaiseEvent(true);
         }
         else if (rsoCurrentScoreP2.Value >= ssoScoreWin.Value)
         {
-            rseWin?.RaiseEvent();
+            rseWin?.RaiseEvent(false);
         }
     }
 }
