@@ -9,6 +9,7 @@ public class S_GameManager : MonoBehaviour
     [SerializeField] private RSE_ResetBall rseResetBall;
     [SerializeField] private RSE_UpdateUI rseUpdateUI;
     [SerializeField] private RSE_StartTime rseStartTime;
+    [SerializeField] private RSE_Win rseWin;
 
     [Title("RSO")]
     [SerializeField] private RSO_CurrentScore rsoCurrentScoreP1;
@@ -64,5 +65,14 @@ public class S_GameManager : MonoBehaviour
     private void CheckWin()
     {
         rseUpdateUI?.RaiseEvent();
+
+        if (rsoCurrentScoreP1.Value >= ssoScoreWin.Value)
+        {
+            rseWin?.RaiseEvent();
+        }
+        else if (rsoCurrentScoreP2.Value >= ssoScoreWin.Value)
+        {
+            rseWin?.RaiseEvent();
+        }
     }
 }

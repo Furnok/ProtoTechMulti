@@ -5,9 +5,11 @@ public class S_UIManagerGame : MonoBehaviour
 {
     [Title("References")]
     [SerializeField] private GameObject panelPause;
+    [SerializeField] private GameObject panelEnd;
 
     [Title("RSE")]
     [SerializeField] private RSE_PauseMenu rsePauseMenu;
+    [SerializeField] private RSE_Win rseWin;
 
     [Title("TEMP")]
     [SerializeField] private ScenesName sceneName;
@@ -17,6 +19,7 @@ public class S_UIManagerGame : MonoBehaviour
     private void OnEnable()
     {
         rsePauseMenu.action += CallPause;
+        rseWin.action += Win;
 
         Cursor.visible = false;
     }
@@ -24,6 +27,7 @@ public class S_UIManagerGame : MonoBehaviour
     private void OnDisable()
     {
         rsePauseMenu.action -= CallPause;
+        rseWin.action -= Win;
     }
 
     private void CallPause()
@@ -57,5 +61,10 @@ public class S_UIManagerGame : MonoBehaviour
         panelPause.SetActive(false);
 
         Time.timeScale = 1.0f;
+    }
+
+    private void Win()
+    {
+        panelPause.SetActive(true);
     }
 }
