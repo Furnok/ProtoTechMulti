@@ -11,8 +11,15 @@ public static class TagEnumGenerator
     {
         string[] tags = UnityEditorInternal.InternalEditorUtility.tags;
 
-        // Start creating the enum code
-        string enumCode = "public enum TagsName\n{\n    " + string.Join(",\n    ", tags.Select(tags => tags.Replace(" ", "_").Replace("-", "_"))) + "\n}";
+        // Start creating the enum code with explicit values based on the index
+        string enumCode = "public enum TagsName\n{\n";
+        for (int i = 0; i < tags.Length; i++)
+        {
+            // Convert space and dash to underscores, then add an explicit integer value
+            string tagName = tags[i].Replace(" ", "_").Replace("-", "_");
+            enumCode += $"    {tagName} = {i},\n"; // Assign the index as the enum value
+        }
+        enumCode += "}";
 
         // Ensure directory exists and write the enum code to a C# file
         Directory.CreateDirectory(Path.GetDirectoryName(EnumFilePath));

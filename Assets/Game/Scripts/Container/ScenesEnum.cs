@@ -1,5 +1,5 @@
 public enum ScenesName
 {
-    Scene_MainMenu,
-    Scene_Level
+    Scene_MainMenu = 0,
+    Scene_Level = 1,
 }
