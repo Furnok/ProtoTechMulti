@@ -25,8 +25,9 @@ public class S_GameManager : MonoBehaviour
 
     private void Start()
     {
-        rsoCurrentScoreP1.Value = ssoScoreP1.Value;
-        rsoCurrentScoreP2.Value = ssoScoreP2.Value;
+        rsoCurrentScoreP1.Value = ssoScoreP1?.Value ?? 0;
+
+        rsoCurrentScoreP2.Value = ssoScoreP2?.Value ?? 0;
 
         rseUpdateUI?.RaiseEvent();
         rseStartTime?.RaiseEvent();
@@ -34,14 +35,25 @@ public class S_GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        rseGoalP1.action += GoalP1;
-        rseGoalP2.action += GoalP2;
+        if (rseGoalP1 != null)
+            rseGoalP1.action += GoalP1;
+
+        if (rseGoalP2 != null)
+            rseGoalP2.action += GoalP2;
     }
 
     private void OnDisable()
     {
-        rseGoalP1.action -= GoalP1;
-        rseGoalP2.action -= GoalP2;
+        if (rseGoalP1 != null)
+            rseGoalP1.action -= GoalP1;
+
+        if (rseGoalP2 != null)
+            rseGoalP2.action -= GoalP2;
+    }
+
+    public void Goal(int amount)
+    {
+        rsoCurrentScoreP1.Value += amount;
     }
 
     private void GoalP1()

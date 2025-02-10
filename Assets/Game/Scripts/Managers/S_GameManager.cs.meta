@@ -3,7 +3,21 @@ guid: abb451a9413da0143a1505d3706f0b24
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rseGoalP1: {fileID: 11400000, guid: a335e6682ecb7734b99253816ebb05ec, type: 2}
+  - rseGoalP2: {fileID: 11400000, guid: dd6f313d950f62944a4c8039dbe970bf, type: 2}
+  - rseResetBall: {fileID: 11400000, guid: 64f1ccbddd176524b915b6bfce5787d6, type: 2}
+  - rseUpdateUI: {fileID: 11400000, guid: 9024fa1a93473154c9379fe4d688bfb3, type: 2}
+  - rseStartTime: {fileID: 11400000, guid: c8092b062f6337a4c94cc4cde846a21d, type: 2}
+  - rseWin: {fileID: 11400000, guid: 47fc6fee07d7a034bbcf681560235a38, type: 2}
+  - rsoCurrentScoreP1: {fileID: 11400000, guid: b8edfb0e5d763fc44bbf8c3801adc38e, type: 2}
+  - rsoCurrentScoreP2: {fileID: 11400000, guid: 1fac52e0bed3d59479ee35d4d1225bb5, type: 2}
+  - ssoScoreGain: {fileID: 11400000, guid: 583bc5c5ce48b4a4b9fcf71e3058e7ed, type: 2}
+  - ssoScoreP1: {instanceID: 0}
+  - ssoScoreP2: {instanceID: 0}
+  - ssoScoreWin: {instanceID: 0}
+  - ssoBallPosP1: {instanceID: 0}
+  - ssoBallPosP2: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

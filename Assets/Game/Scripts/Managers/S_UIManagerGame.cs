@@ -1,6 +1,6 @@
 using Sirenix.OdinInspector;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class S_UIManagerGame : MonoBehaviour
 {
