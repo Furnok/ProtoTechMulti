@@ -22,6 +22,8 @@ public class S_Player : MonoBehaviour
     private bool isMoving = false;
     private bool canJump = true;
 
+    private Coroutine coroutine;
+
     private void OnEnable()
     {
         rsePlayerMove.action += PlayerMove;
@@ -69,15 +71,25 @@ public class S_Player : MonoBehaviour
 
     private void PlayerMove(InputAction.CallbackContext ctx)
     {
-        if (ctx.started)
+        if (ctx.performed)
         {
             isMoving = true;
 
-            StartCoroutine(Move(ctx.ReadValue<float>()));
+            if(coroutine != null)
+            {
+                StopCoroutine(coroutine);
+            }
+
+            coroutine = StartCoroutine(Move(ctx.ReadValue<float>()));
         }
         else if (ctx.canceled)
         {
             isMoving = false;
+
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+            }
 
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
