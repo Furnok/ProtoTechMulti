@@ -28,7 +28,7 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
             ""id"": ""c09dc92b-bd34-47f6-b6a4-e2e166609357"",
             ""actions"": [
                 {
-                    ""name"": ""Movement Player1"",
+                    ""name"": ""Movement Player"",
                     ""type"": ""Value"",
                     ""id"": ""3b55042c-88e4-475c-b480-29f6a16bc6e5"",
                     ""expectedControlType"": ""Axis"",
@@ -37,27 +37,9 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Movement Player2"",
-                    ""type"": ""Value"",
-                    ""id"": ""438918c8-834b-4d65-a318-cb1a4c23ea08"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Jump Player1"",
+                    ""name"": ""Jump Player"",
                     ""type"": ""Button"",
                     ""id"": ""730cc6f4-ea56-495d-bbc0-c099bba1e927"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Jump Player2"",
-                    ""type"": ""Button"",
-                    ""id"": ""3d7ba48f-0a36-4297-b535-1f5980852880"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -81,7 +63,7 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement Player1"",
+                    ""action"": ""Movement Player"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -92,7 +74,7 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement Player1"",
+                    ""action"": ""Movement Player"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -103,7 +85,7 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement Player1"",
+                    ""action"": ""Movement Player"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -114,7 +96,7 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement Player1"",
+                    ""action"": ""Movement Player"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -125,7 +107,7 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement Player1"",
+                    ""action"": ""Movement Player"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -141,46 +123,13 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""321edcdb-2e6a-49bf-9249-ccb7661c48de"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement Player2"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""fa057f33-0740-4cd7-8f45-6266798f4d19"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement Player2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""bdbe260b-eb0b-407b-a343-bc7f04e6f30b"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement Player2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""3b9894a0-b09f-4c07-abbb-23a29ee0347a"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump Player1"",
+                    ""action"": ""Jump Player"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -191,18 +140,7 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump Player1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""dda71cbd-b9bb-4afc-9980-207f41d085d4"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump Player2"",
+                    ""action"": ""Jump Player"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -213,10 +151,8 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
 }");
         // Inputs
         m_Inputs = asset.FindActionMap("Inputs", throwIfNotFound: true);
-        m_Inputs_MovementPlayer1 = m_Inputs.FindAction("Movement Player1", throwIfNotFound: true);
-        m_Inputs_MovementPlayer2 = m_Inputs.FindAction("Movement Player2", throwIfNotFound: true);
-        m_Inputs_JumpPlayer1 = m_Inputs.FindAction("Jump Player1", throwIfNotFound: true);
-        m_Inputs_JumpPlayer2 = m_Inputs.FindAction("Jump Player2", throwIfNotFound: true);
+        m_Inputs_MovementPlayer = m_Inputs.FindAction("Movement Player", throwIfNotFound: true);
+        m_Inputs_JumpPlayer = m_Inputs.FindAction("Jump Player", throwIfNotFound: true);
         m_Inputs_Pause = m_Inputs.FindAction("Pause", throwIfNotFound: true);
     }
 
@@ -279,19 +215,15 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
     // Inputs
     private readonly InputActionMap m_Inputs;
     private List<IInputsActions> m_InputsActionsCallbackInterfaces = new List<IInputsActions>();
-    private readonly InputAction m_Inputs_MovementPlayer1;
-    private readonly InputAction m_Inputs_MovementPlayer2;
-    private readonly InputAction m_Inputs_JumpPlayer1;
-    private readonly InputAction m_Inputs_JumpPlayer2;
+    private readonly InputAction m_Inputs_MovementPlayer;
+    private readonly InputAction m_Inputs_JumpPlayer;
     private readonly InputAction m_Inputs_Pause;
     public struct InputsActions
     {
         private @I_Inputs m_Wrapper;
         public InputsActions(@I_Inputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MovementPlayer1 => m_Wrapper.m_Inputs_MovementPlayer1;
-        public InputAction @MovementPlayer2 => m_Wrapper.m_Inputs_MovementPlayer2;
-        public InputAction @JumpPlayer1 => m_Wrapper.m_Inputs_JumpPlayer1;
-        public InputAction @JumpPlayer2 => m_Wrapper.m_Inputs_JumpPlayer2;
+        public InputAction @MovementPlayer => m_Wrapper.m_Inputs_MovementPlayer;
+        public InputAction @JumpPlayer => m_Wrapper.m_Inputs_JumpPlayer;
         public InputAction @Pause => m_Wrapper.m_Inputs_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Inputs; }
         public void Enable() { Get().Enable(); }
@@ -302,18 +234,12 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_InputsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_InputsActionsCallbackInterfaces.Add(instance);
-            @MovementPlayer1.started += instance.OnMovementPlayer1;
-            @MovementPlayer1.performed += instance.OnMovementPlayer1;
-            @MovementPlayer1.canceled += instance.OnMovementPlayer1;
-            @MovementPlayer2.started += instance.OnMovementPlayer2;
-            @MovementPlayer2.performed += instance.OnMovementPlayer2;
-            @MovementPlayer2.canceled += instance.OnMovementPlayer2;
-            @JumpPlayer1.started += instance.OnJumpPlayer1;
-            @JumpPlayer1.performed += instance.OnJumpPlayer1;
-            @JumpPlayer1.canceled += instance.OnJumpPlayer1;
-            @JumpPlayer2.started += instance.OnJumpPlayer2;
-            @JumpPlayer2.performed += instance.OnJumpPlayer2;
-            @JumpPlayer2.canceled += instance.OnJumpPlayer2;
+            @MovementPlayer.started += instance.OnMovementPlayer;
+            @MovementPlayer.performed += instance.OnMovementPlayer;
+            @MovementPlayer.canceled += instance.OnMovementPlayer;
+            @JumpPlayer.started += instance.OnJumpPlayer;
+            @JumpPlayer.performed += instance.OnJumpPlayer;
+            @JumpPlayer.canceled += instance.OnJumpPlayer;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
@@ -321,18 +247,12 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IInputsActions instance)
         {
-            @MovementPlayer1.started -= instance.OnMovementPlayer1;
-            @MovementPlayer1.performed -= instance.OnMovementPlayer1;
-            @MovementPlayer1.canceled -= instance.OnMovementPlayer1;
-            @MovementPlayer2.started -= instance.OnMovementPlayer2;
-            @MovementPlayer2.performed -= instance.OnMovementPlayer2;
-            @MovementPlayer2.canceled -= instance.OnMovementPlayer2;
-            @JumpPlayer1.started -= instance.OnJumpPlayer1;
-            @JumpPlayer1.performed -= instance.OnJumpPlayer1;
-            @JumpPlayer1.canceled -= instance.OnJumpPlayer1;
-            @JumpPlayer2.started -= instance.OnJumpPlayer2;
-            @JumpPlayer2.performed -= instance.OnJumpPlayer2;
-            @JumpPlayer2.canceled -= instance.OnJumpPlayer2;
+            @MovementPlayer.started -= instance.OnMovementPlayer;
+            @MovementPlayer.performed -= instance.OnMovementPlayer;
+            @MovementPlayer.canceled -= instance.OnMovementPlayer;
+            @JumpPlayer.started -= instance.OnJumpPlayer;
+            @JumpPlayer.performed -= instance.OnJumpPlayer;
+            @JumpPlayer.canceled -= instance.OnJumpPlayer;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
@@ -355,10 +275,8 @@ public partial class @I_Inputs: IInputActionCollection2, IDisposable
     public InputsActions @Inputs => new InputsActions(this);
     public interface IInputsActions
     {
-        void OnMovementPlayer1(InputAction.CallbackContext context);
-        void OnMovementPlayer2(InputAction.CallbackContext context);
-        void OnJumpPlayer1(InputAction.CallbackContext context);
-        void OnJumpPlayer2(InputAction.CallbackContext context);
+        void OnMovementPlayer(InputAction.CallbackContext context);
+        void OnJumpPlayer(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }
 }

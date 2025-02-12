@@ -6,7 +6,7 @@
             "id": "c09dc92b-bd34-47f6-b6a4-e2e166609357",
             "actions": [
                 {
-                    "name": "Movement Player1",
+                    "name": "Movement Player",
                     "type": "Value",
                     "id": "3b55042c-88e4-475c-b480-29f6a16bc6e5",
                     "expectedControlType": "Axis",
@@ -15,27 +15,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Movement Player2",
-                    "type": "Value",
-                    "id": "438918c8-834b-4d65-a318-cb1a4c23ea08",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Jump Player1",
+                    "name": "Jump Player",
                     "type": "Button",
                     "id": "730cc6f4-ea56-495d-bbc0-c099bba1e927",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Jump Player2",
-                    "type": "Button",
-                    "id": "3d7ba48f-0a36-4297-b535-1f5980852880",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -59,7 +41,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement Player1",
+                    "action": "Movement Player",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -70,7 +52,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement Player1",
+                    "action": "Movement Player",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -81,7 +63,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement Player1",
+                    "action": "Movement Player",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -92,7 +74,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement Player1",
+                    "action": "Movement Player",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -103,7 +85,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement Player1",
+                    "action": "Movement Player",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -119,46 +101,13 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "321edcdb-2e6a-49bf-9249-ccb7661c48de",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement Player2",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "fa057f33-0740-4cd7-8f45-6266798f4d19",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement Player2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "bdbe260b-eb0b-407b-a343-bc7f04e6f30b",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement Player2",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "3b9894a0-b09f-4c07-abbb-23a29ee0347a",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump Player1",
+                    "action": "Jump Player",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -169,18 +118,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump Player1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dda71cbd-b9bb-4afc-9980-207f41d085d4",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump Player2",
+                    "action": "Jump Player",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
