@@ -8,6 +8,7 @@ public class S_InputManager : MonoBehaviour
     [SerializeField] private RSE_PlayerMove rsePlayerMove2;
     [SerializeField] private RSE_PlayerJump rsePlayerJump1;
     [SerializeField] private RSE_PlayerJump rsePlayerJump2;
+    [SerializeField] private RSE_PauseMenu rsePauseMenu;
 
     private void Start()
     {
@@ -35,9 +36,9 @@ public class S_InputManager : MonoBehaviour
 
             foreach (var action in actionMap)
             {
-                if(action.name == "Movement Player")
+                if (action.name == "Movement Player")
                 {
-                    if(i == 0)
+                    if (i == 0)
                     {
                         action.started += ctx => rsePlayerMove1.RaiseEvent(ctx);
                         action.performed += ctx => rsePlayerMove1.RaiseEvent(ctx);
@@ -67,6 +68,82 @@ public class S_InputManager : MonoBehaviour
                         action.performed += ctx => rsePlayerJump2.RaiseEvent(ctx);
                         action.canceled += ctx => rsePlayerJump2.RaiseEvent(ctx);
                     }
+                }
+
+                if (action.name == "Pause")
+                {
+                    action.started += ctx => rsePauseMenu.RaiseEvent();
+                    action.performed += ctx => rsePauseMenu.RaiseEvent();
+                    action.canceled += ctx => rsePauseMenu.RaiseEvent();
+                }
+            }
+        }
+
+        if (numGamepads == 0)
+        {
+            var playerInput = playerInputManager.JoinPlayer(numGamepads, -1, "Keyboard", Keyboard.current);
+
+            PlayerInput player = playerInput.GetComponent<PlayerInput>();
+
+            InputActionAsset actionAsset = player.actions;
+
+            InputActionMap actionMap = actionAsset.FindActionMap("Inputs");
+
+            foreach (var action in actionMap)
+            {
+                if (action.name == "Movement Player")
+                {
+                    action.started += ctx => rsePlayerMove1.RaiseEvent(ctx);
+                    action.performed += ctx => rsePlayerMove1.RaiseEvent(ctx);
+                    action.canceled += ctx => rsePlayerMove1.RaiseEvent(ctx);
+                }
+
+                if (action.name == "Jump Player")
+                {
+                    action.started += ctx => rsePlayerJump1.RaiseEvent(ctx);
+                    action.performed += ctx => rsePlayerJump1.RaiseEvent(ctx);
+                    action.canceled += ctx => rsePlayerJump1.RaiseEvent(ctx);
+                }
+
+                if (action.name == "Pause")
+                {
+                    action.started += ctx => rsePauseMenu.RaiseEvent();
+                    action.performed += ctx => rsePauseMenu.RaiseEvent();
+                    action.canceled += ctx => rsePauseMenu.RaiseEvent();
+                }
+            }
+        }
+        else if (numGamepads == 1)
+        {
+            var playerInput = playerInputManager.JoinPlayer(numGamepads, -1, "Keyboard", Keyboard.current);
+
+            PlayerInput player = playerInput.GetComponent<PlayerInput>();
+
+            InputActionAsset actionAsset = player.actions;
+
+            InputActionMap actionMap = actionAsset.FindActionMap("Inputs");
+
+            foreach (var action in actionMap)
+            {
+                if (action.name == "Movement Player")
+                {
+                    action.started += ctx => rsePlayerMove2.RaiseEvent(ctx);
+                    action.performed += ctx => rsePlayerMove2.RaiseEvent(ctx);
+                    action.canceled += ctx => rsePlayerMove2.RaiseEvent(ctx);
+                }
+
+                if (action.name == "Jump Player")
+                {
+                    action.started += ctx => rsePlayerJump2.RaiseEvent(ctx);
+                    action.performed += ctx => rsePlayerJump2.RaiseEvent(ctx);
+                    action.canceled += ctx => rsePlayerJump2.RaiseEvent(ctx);
+                }
+
+                if (action.name == "Pause")
+                {
+                    action.started += ctx => rsePauseMenu.RaiseEvent();
+                    action.performed += ctx => rsePauseMenu.RaiseEvent();
+                    action.canceled += ctx => rsePauseMenu.RaiseEvent();
                 }
             }
         }

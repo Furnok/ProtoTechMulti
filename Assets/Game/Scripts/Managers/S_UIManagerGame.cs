@@ -1,6 +1,8 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class S_UIManagerGame : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class S_UIManagerGame : MonoBehaviour
     [SerializeField] private GameObject panelEnd;
     [SerializeField] private TextMeshProUGUI textWin;
     [SerializeField] private TextMeshProUGUI textLose;
+    [SerializeField] private Button buttonResume;
+    [SerializeField] private Button buttonRestart;
 
     [Title("RSE")]
     [SerializeField] private RSE_PauseMenu rsePauseMenu;
@@ -24,6 +28,7 @@ public class S_UIManagerGame : MonoBehaviour
         rseWin.action += Win;
 
         Cursor.visible = false;
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     private void OnDisable()
@@ -52,6 +57,7 @@ public class S_UIManagerGame : MonoBehaviour
     {
         isPaused = true;
         Cursor.visible = true;
+        //buttonResume.Select();
 
         panelPause.SetActive(true);
 
@@ -63,6 +69,7 @@ public class S_UIManagerGame : MonoBehaviour
         isPaused = false;
         Cursor.visible = false;
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        EventSystem.current.SetSelectedGameObject(null);
 
         panelPause.SetActive(false);
 
@@ -71,6 +78,8 @@ public class S_UIManagerGame : MonoBehaviour
 
     private void Win(bool val)
     {
+        //buttonRestart.Select();
+
         if (val)
         {
             textWin.text = "Player 1: Win";

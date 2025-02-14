@@ -93,3 +93,4 @@ MonoBehaviour:
   rsePlayerMove2: {fileID: 11400000, guid: 54de10c0f247e614e9b760d0aa3923f5, type: 2}
   rsePlayerJump1: {fileID: 11400000, guid: d589db9499e82584db88caf24d941bf9, type: 2}
   rsePlayerJump2: {fileID: 11400000, guid: 8182dc166a898ba4191090d9212960de, type: 2}
+  rsePauseMenu: {fileID: 11400000, guid: 5b12ac3acd2a7fe4083fedc4aa1948d9, type: 2}
